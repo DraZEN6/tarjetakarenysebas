@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta charset="UTF-8">
+    
+    <meta name="description" content="Invitación de boda de Karen y Sebas. Celebra con nosotros este momento especial.">
+<meta name="keywords" content="boda, invitación, Karen y Sebas, evento, celebración">
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+
+    <title>Detalles del Evento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+    
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background-color: #f8f3ee;
+            color: #5c4636;
+            text-align: center;
+        }
+
+       /* Transición para el fade-in */
+.content {
+    opacity: 0; /* Comienza invisible */
+    transition: opacity 2s ease-in-out; /* Tiempo de la transición */
+}
+
+.content.visible {
+    opacity: 1; /* Cuando tiene la clase visible, cambia la opacidad a 1 */
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f3ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 2s ease-out; /* Transición para hacer fade en preloader */
+}
+
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* Mostrar el contenido */
+.content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 2s ease-in-out, visibility 2s ease-in-out; /* Asegura un fade-in suave */
+        }
+
+        .content.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .preloader h1 {
+    font-size: 3.5rem;
+    font-family: 'Allura', cursive;
+
+    color: #a67347;
+    animation: fadeIn 2s ease-in-out infinite;
+}
+
+        .preloader p {
+            font-size: 1.2rem;
+            color: #5c4636;
+            margin-top: 10px;
+            animation: fadeIn 2.5s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+        0% {
+            opacity: 0; /* Transparente */
+        }
+        50% {
+            opacity: 1; /* Color fuerte */
+        }
+        0% {
+            opacity: 0; /* Transparente */
+        }
+    }
+
+    /* Estilo para contenido */
+    .content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 2s ease-in-out, visibility 2s ease-in-out; /* Asegura un fade-in suave */
+        }
+
+        .content.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+    
+        .header {
+            padding: 30px;
+            background-image: url('fondo flores.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .header h1, .verse {
+            font-family: 'Great Vibes', cursive;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .header {
+        position: relative;
+        padding: 30px;
+        background-image: url('fondo flores.jpg'); /* Cambia 'fondo flores.jpg' al nombre de tu archivo */
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1); /* Fondo negro translúcido */
+        z-index: 1;
+    }
+
+    .header h1, .verse {
+        position: relative;
+        z-index: 2; /* Asegura que el texto quede encima del fondo negro */
+    }
+        .header h1 {
+            font-size: 4.5rem;
+        }
+
+        .verse {
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+        .shadow-up {
+    width: 100%;
+    height: 60px;
+    background: radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.2), transparent 70%);
+    margin: 20px 0;
+}
+.shadow-down {
+    width: 100%;
+    height: 60px;
+    background: radial-gradient(ellipse at top, rgba(0, 0, 0, 0.2), transparent 70%);
+    margin: 20px 0;
+}
+        .details p {
+            font-size: 1.1rem;
+            color: #5c4636;
+            margin: 20px 0;
+        }
+
+       /* Estilo general del contador */
+.countdown {
+    margin: 20px auto;
+    max-width: 600px;
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Estilo de la barra decorativa de fecha */
+.date-decorator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #a67347;
+    margin-bottom: 20px;
+}
+
+.date-decorator::before,
+.date-decorator::after {
+    content: '';
+    flex: 1;
+    border-top: 2px solid #a67347;
+    margin: 0 10px;
+}
+
+/* Título del contador */
+.countdown h2 {
+    font-size: 1.8rem;
+    color: #3b2f2f;
+    text-align: center;
+}
+
+/* Cuadrícula de elementos */
+.countdown-grid {
+    display: flex;
+    justify-content: space-evenly; /* Espacio balanceado horizontalmente */
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    flex-wrap: nowrap; /* Evitar que los elementos se apilen verticalmente */
+    gap: 5px; /* Espacio pequeño entre elementos */
+}
+
+/* Estilo de cada elemento del contador */
+.countdown-item {
+    text-align: center;
+    flex: 1; /* Hacer que todos los elementos tengan el mismo ancho */
+    max-width: 80px; /* Límite de ancho en pantallas pequeñas */
+}
+
+.countdown-item span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3b2f2f;
+    text-decoration: none;
+    display: block;
+}
+
+/* Divisores entre elementos */
+.divider {
+    font-size: 1.5rem;
+    color: #a67347;
+}
+
+.divider-long {
+    width: 100%;
+    border-top: 2px solid #a67347;
+    margin: 10px 0;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    /* Asegurar alineación horizontal */
+    .countdown-grid {
+        justify-content: space-around; /* Espacio balanceado */
+        gap: 10px; /* Espacio entre elementos */
+    }
+
+    .countdown-item {
+        max-width: 60px; /* Reducir el tamaño máximo de los contadores */
+    }
+
+    .countdown-item span {
+        font-size: 1.8rem; /* Reducir tamaño del texto */
+    }
+
+    .date-decorator {
+        font-size: 1.2rem; /* Texto más pequeño para la fecha */
+    }
+
+    .countdown h2 {
+        font-size: 1.5rem; /* Ajustar título */
+    }
+}
+
+
+        /* Estilos del botón "Ver más" */
+        #giftDetail {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        #giftDetail p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        #giftDetail .close-button {
+            background-color: #a67347;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        #giftDetail .close-button:hover {
+            background-color: #86563b;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .button {
+            background-color: #a67347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px 0;
+        }
+
+        .button:hover {
+            background-color: #86563b;
+        }
+
+        .footer em {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+        }
+        .mensaje-final {
+    font-family: 'Great Vibes', cursive; /* Cambia por la fuente que desees */
+    font-size: 5rem !important; /* Ajusta el tamaño según tu diseño */
+    color: #a67347; /* Color específico, ajustable */
+    text-align: center; /* Opcional, para alinear el texto */
+    margin-top: 20px; /* Opcional, para añadir espacio superior */
+}
+
+
+ 
+        
+    
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <h1>K & S</h1>
+      </div>
+      
+    <div class="header">
+        <h1><br>Karen & Sebas</h1>
+        <p class="verse">“Todo lo hizo hermoso en su tiempo; y ha puesto eternidad
+             en el corazón de<br> ellos, sin que alcance el hombre a entender
+              la obra<br> que ha hecho Dios desde el principio hasta el fin.”<br>
+            Eclesiastés 3:11"<br><br>
+        </p>
+    </div>
+    
+</div> <p><br>¡¡Nos Casamos!!<br> ¡Es una alegría y bendición para nosotros!<br>
+        Es por eso que nos gustaría invitarte a celebrar nuestra unión.</p></div>
+        <div class="details">
+            <div class="countdown">
+                <div class="date-decorator">01.03.2025</div>
+                <h2>Faltan</h2>
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span id="days">0</span>
+                        <p>Días</p>
+                    </div>
+                    <div class="divider">|</div>
+                    <div class="countdown-item">
+                        <span id="hours">0</span>
+                        <p>Horas</p>
+                    </div>
+                    <div class="divider">|</div>
+                    <div class="countdown-item">
+                        <span id="minutes">0</span>
+                        <p>Minutos</p>
+                    </div>
+                    <div class="divider">|</div>
+                    <div class="countdown-item">
+                        <span id="seconds">0</span>
+                        <p>Segundos</p>
+                    </div>
+                </div>
+                <div class="divider-long"></div>
+            </div>
+            <div class="shadow-up"></div>
+            
+    
+            <script>
+                window.addEventListener("load", function () {
+                  const preloader = document.querySelector(".preloader");
+                  const content = document.querySelector(".content");
+            
+                  setTimeout(() => {
+                    preloader.style.display = "none";
+                    content.style.display = "block";
+                  }, 2100); // 3 segundos de pantalla de carga
+                });
+              </script>
+    
+    
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modal Ubicación</title>
+        <style>
+            /* Estilos del modal */
+            #mapModal {
+                display: none; 
+                position: fixed; 
+                top: 50%; 
+                left: 50%; 
+                transform: translate(-50%, -50%) scale(0); 
+                width: 90%; 
+                max-width: 400px; 
+                background: white; 
+                padding: 20px; 
+                border-radius: 10px; 
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+                transition: transform 0.3s ease;
+                z-index: 1000;
+            }
+    
+            #overlay {
+                display: none; 
+                position: fixed; 
+                top: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 100%; 
+                background: rgba(0, 0, 0, 0.5); 
+                z-index: 999;
+            }
+    
+            button {
+                background-color: #a67347; 
+                color: white; 
+                border: none; 
+                padding: 10px; 
+                border-radius: 5px; 
+                cursor: pointer;
+            }
+    
+            span {
+                color: #a67347; 
+                cursor: pointer; 
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <br>Ceremonia: 21:00 hs, El Refugio Hotel & Suites,<br> 
+            <span onclick="mostrarVentana()">
+                J.R Binaghi 2180, Villa Angela, Chaco
+            </span>.
+        </p>
+    
+        <!-- Modal -->
+        <div id="giftDetail" id="mapModal">
+            <h3>Ubicación</h3>
+            <p>J.R Binaghi 2180, Villa Angela, Chaco</p>
+            <p>
+                <a href="https://www.google.com/maps/place/El+Refugio+Hotel+%26+Suites./@-27.5566615,-60.7116991,64m/data=!3m1!1e3!4m9!3m8!1s0x9447077ce5c11147:0x6e77875735c43c24!5m2!4m1!1i2!8m2!3d-27.556643!4d-60.711515!16s%2Fg%2F11cjhbtzc9?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank" style="color: #a67347;">
+                    Ver en Google Maps
+                </a>
+            </p>
+            <button class="close-button" onclick="cerrarVentana()">Cerrar</button>
+        </div>
+    
+        <!-- Overlay -->
+        <div id="overlay" onclick="cerrarVentana()"></div>
+    
+        <!-- Script -->
+        <script>
+            function mostrarVentana() {
+                document.getElementById('giftDetail').style.transform = 'translate(-50%, -50%) scale(1)';
+                document.getElementById('overlay').style.display = 'block';
+            }
+    
+            function cerrarVentana() {
+                document.getElementById('giftDetail').style.transform = 'translate(-50%, -50%) scale(0)';
+                document.getElementById('overlay').style.display = 'none';
+            }
+        </script>
+    </body>
+    </html>
+    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+            <br><br><br><br>
+    
+                Fiesta: 22:30 hs, El Refugio Hotel & Suites,<br>
+                J.R Binaghi 2180, Villa Angela, Chaco.<br><br><br><br></p>
+        
+                <p>Por cuestiones de organización, por favor te pedimos confirmar asistencia a la brevedad.<br>
+                Se respetará el horario estipulado.<br><br><br></p>
+                La fecha límite de confirmación es el 31/01/2025 sin excepción.<br>
+            <button class="button" onclick="window.location.href='https://wa.link/psww2t'">Confirmar Asistencia</button>
+            <div class="shadow-down"></div>
+            <p><br><br>En el caso de que quieras hacernos un presente</p>
+            <button class="button" onclick="mostrarVentana()">Ver Más</button>
+        </div>
+    
+        <div id="overlay" onclick="cerrarVentana()"></div>
+    
+        <div id="giftDetail">
+            <p>Podes contactarte con nosotros o sino también hacerlo al siguiente CVU.</p>
+            <p><strong>CVU:</strong> 0000003100060968440579</p>
+            <p><strong>Alias:</strong> sebas.vogel.2000</p>
+            <button class="close-button" onclick="cerrarVentana()">Cerrar</button>
+        </div>
+    
+        <div class="footer">
+            <p><br>Por cualquier inquietud podes comunicarte con nosotros<br><br>
+            Karen 3735 614249<br><br> Sebas 3329 638832<br><br><br>
+            <em>¡Los esperamos!</em></p>
+        </div>
+   
+        <script>
+     window.addEventListener("load", function () {
+                const preloader = document.querySelector(".preloader");
+                const content = document.querySelector(".content");
+    
+                // Esconde el preloader con un fade-out después de 4 segundos
+                setTimeout(() => {
+                    preloader.classList.add("hidden");  // Se oculta el preloader
+                }, 4000);
+    
+              
+            });
+    
+    
+    
+    
+    
+    
+    
+         
+    
+            const updateCountdown = () => {
+        const eventDate = new Date("2025-03-01T21:00:00").getTime();
+        const now = new Date().getTime();
+        const gap = eventDate - now;
+
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+
+        const days = Math.floor(gap / day);
+        const hours = Math.floor((gap % day) / hour);
+        const minutes = Math.floor((gap % hour) / minute);
+        const seconds = Math.floor((gap % minute) / second);
+
+        if (gap <= 0) {
+            // Mostrar mensaje especial al llegar a cero
+            document.querySelector(".countdown").innerHTML = `
+               <p class="mensaje-final">¡Llegó El Gran Día!</p>
+                <p>Es hora de celebrar el amor y la felicidad de Karen & Sebas.</p>
+            `;
+        } else {
+            // Actualizar los valores del contador
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+    };
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+    
+            function mostrarVentana() {
+                document.getElementById('giftDetail').style.transform = 'translate(-50%, -50%) scale(1)';
+                document.getElementById('overlay').style.display = 'block';
+            }
+    
+            function cerrarVentana() {
+                document.getElementById('giftDetail').style.transform = 'translate(-50%, -50%) scale(0)';
+                document.getElementById('overlay').style.display = 'none';
+            }
+        </script>
+    </body>
+    </html>
