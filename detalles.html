@@ -277,44 +277,25 @@
 }
 
 
-        /* Estilos del botón "Ver más" */
-        #giftDetail {
+
+.modal {
+            display: none;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
             width: 90%;
             max-width: 400px;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
+            background: white;
             padding: 20px;
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
             z-index: 1000;
         }
 
-        #giftDetail p {
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-
-        #giftDetail .close-button {
-            background-color: #a67347;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-
-        #giftDetail .close-button:hover {
-            background-color: #86563b;
-        }
-
         #overlay {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -322,23 +303,53 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
-            display: none;
         }
 
-        .button {
+        .button, .close-button {
             background-color: #a67347;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1rem;
-            margin: 20px 0;
         }
 
-        .button:hover {
+        .button:hover, .close-button:hover {
             background-color: #86563b;
         }
+
+        span {
+            color: #a67347;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+
+    
+
+
+
+
+       
+
+
+ /* Estilos del botón "Ver más" */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         .footer em {
             font-family: 'Great Vibes', cursive;
@@ -431,86 +442,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modal Ubicación</title>
         <style>
-            /* Estilos del modal */
-            #mapModal {
-                display: none; 
-                position: fixed; 
-                top: 50%; 
-                left: 50%; 
-                transform: translate(-50%, -50%) scale(0); 
-                width: 90%; 
-                max-width: 400px; 
-                background: white; 
-                padding: 20px; 
-                border-radius: 10px; 
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                transition: transform 0.3s ease;
-                z-index: 1000;
-            }
-    
-            #overlay {
-                display: none; 
-                position: fixed; 
-                top: 0; 
-                left: 0; 
-                width: 100%; 
-                height: 100%; 
-                background: rgba(0, 0, 0, 0.5); 
-                z-index: 999;
-            }
-    
-            button {
-                background-color: #a67347; 
-                color: white; 
-                border: none; 
-                padding: 10px; 
-                border-radius: 5px; 
-                cursor: pointer;
-            }
-    
-            span {
-                color: #a67347; 
-                cursor: pointer; 
-                text-decoration: underline;
-            }
+        
+
         </style>
     </head>
     <body>
         <p>
             <br>Ceremonia: 21:00 hs, El Refugio Hotel & Suites,<br> 
-            <span onclick="mostrarVentana()">
+            <span onclick="mostrarVentana('modalLink')">
                 J.R Binaghi 2180, Villa Angela, Chaco
             </span>.
         </p>
-    
-        <!-- Modal -->
-        <div id="giftDetail" id="mapModal">
-            <h3>Ubicación</h3>
-            <p>J.R Binaghi 2180, Villa Angela, Chaco</p>
-            <p>
-                <a href="https://www.google.com/maps/place/El+Refugio+Hotel+%26+Suites./@-27.5566615,-60.7116991,64m/data=!3m1!1e3!4m9!3m8!1s0x9447077ce5c11147:0x6e77875735c43c24!5m2!4m1!1i2!8m2!3d-27.556643!4d-60.711515!16s%2Fg%2F11cjhbtzc9?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
-                   target="_blank" style="color: #a67347;">
-                    Ver en Google Maps
-                </a>
-            </p>
-            <button class="close-button" onclick="cerrarVentana()">Cerrar</button>
-        </div>
+        
+        <!-- Modal del link -->
+        <div id="modalLink" class="modal">
+        <h3>Ubicación</h3>
+        <p>J.R Binaghi 2180, Villa Angela, Chaco</p>
+        <p>
+            <a href="https://www.google.com/maps/place/El+Refugio+Hotel+%26+Suites./@-27.5566615,-60.7116991,64m/data=!3m1!1e3!4m9!3m8!1s0x9447077ce5c11147:0x6e77875735c43c24!5m2!4m1!1i2!8m2!3d-27.556643!4d-60.711515!16s%2Fg%2F11cjhbtzc9?entry=ttu" 
+               target="_blank" style="color: #a67347;">
+                Ver en Google Maps
+            </a>
+        </p>
+        <button class="close-button" onclick="cerrarVentana('modalLink')">Cerrar</button>
+    </div>
+        
     
         <!-- Overlay -->
-        <div id="overlay" onclick="cerrarVentana()"></div>
+        <div id="overlay" onclick="cerrarTodo()"></div>
     
-        <!-- Script -->
-        <script>
-            function mostrarVentana() {
-                document.getElementById('giftDetail').style.transform = 'translate(-50%, -50%) scale(1)';
-                document.getElementById('overlay').style.display = 'block';
-            }
-    
-            function cerrarVentana() {
-                document.getElementById('giftDetail').style.transform = 'translate(-50%, -50%) scale(0)';
-                document.getElementById('overlay').style.display = 'none';
-            }
-        </script>
+        
     </body>
     </html>
     
@@ -530,21 +491,23 @@
         
                 <p>Por cuestiones de organización, por favor te pedimos confirmar asistencia a la brevedad.<br>
                 Se respetará el horario estipulado.<br><br><br></p>
-                La fecha límite de confirmación es el 31/01/2025 sin excepción.<br>
+                La fecha límite de confirmación es el 31/01/2025 sin excepción.<br><br>
             <button class="button" onclick="window.location.href='https://wa.link/psww2t'">Confirmar Asistencia</button>
+            <br>
             <div class="shadow-down"></div>
-            <p><br><br>En el caso de que quieras hacernos un presente</p>
-            <button class="button" onclick="mostrarVentana()">Ver Más</button>
-        </div>
-    
-        <div id="overlay" onclick="cerrarVentana()"></div>
-    
-        <div id="giftDetail">
-            <p>Podes contactarte con nosotros o sino también hacerlo al siguiente CVU.</p>
-            <p><strong>CVU:</strong> 0000003100060968440579</p>
-            <p><strong>Alias:</strong> sebas.vogel.2000</p>
-            <button class="close-button" onclick="cerrarVentana()">Cerrar</button>
-        </div>
+            <!-- Contenido con el botón -->
+    <p>En el caso de que quieras hacernos un presente</p>
+    <button class="button" onclick="mostrarVentana('modalButton')">Ver Más</button>
+
+    <!-- Modal para el presente -->
+    <div id="modalButton" class="modal">
+        <p>Podes contactarte con nosotros o hacerlo al siguiente CVU:</p>
+        <p><strong>CVU:</strong> 0000003100060968440579</p>
+        <p><strong>Alias:</strong> sebas.vogel.2000</p>
+        <button class="close-button" onclick="cerrarVentana('modalButton')">Cerrar</button>
+    </div>
+    <div id="overlay" onclick="cerrarTodo()"></div>
+
     
         <div class="footer">
             <p><br>Por cualquier inquietud podes comunicarte con nosotros<br><br>
@@ -606,15 +569,34 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
     
-            function mostrarVentana() {
-                document.getElementById('giftDetail').style.transform = 'translate(-50%, -50%) scale(1)';
-                document.getElementById('overlay').style.display = 'block';
-            }
-    
-            function cerrarVentana() {
-                document.getElementById('giftDetail').style.transform = 'translate(-50%, -50%) scale(0)';
-                document.getElementById('overlay').style.display = 'none';
-            }
+         
         </script>
+
+<script>
+    function mostrarVentana(modalId) {
+        document.getElementById(modalId).style.transform = 'translate(-50%, -50%) scale(1)';
+        document.getElementById(modalId).style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function cerrarVentana(modalId) {
+        document.getElementById(modalId).style.transform = 'translate(-50%, -50%) scale(0)';
+        setTimeout(() => {
+            document.getElementById(modalId).style.display = 'none';
+        }, 300); // Espera el tiempo de la transición antes de ocultar el modal
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function cerrarTodo() {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            modal.style.transform = 'translate(-50%, -50%) scale(0)';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300); // Espera el tiempo de la transición
+        });
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
     </body>
     </html>
