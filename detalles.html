@@ -282,53 +282,51 @@
 
 
 .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            width: 90%;
-            max-width: 400px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-               box-sizing: border-box; /* Incluye padding y border dentro del ancho */
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 90%;
+        max-width: 400px;
+        background: white;
+        padding: 20px;
+        box-sizing: border-box; /* Incluye padding y border dentro del ancho */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
+    #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
 
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
+    .button, .close-button {
+        background-color: #a67347;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-        .button, .close-button {
-            background-color: #a67347;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .button:hover, .close-button:hover {
+        background-color: #86563b;
+    }
 
-        .button:hover, .close-button:hover {
-            background-color: #86563b;
-        }
-
-        span {
-            color: #a67347;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
+    span {
+        color: #a67347;
+        cursor: pointer;
+        text-decoration: underline;
+    }
 
     
 
@@ -395,7 +393,7 @@
         </p>
     </div>
     
-</div> <p><br>¡¡Nos Casamos!!<br> ¡Es una alegría y bendición para nosotros!<br>
+</div> <p><br><br><br>¡¡Nos Casamos!!<br> ¡Es una alegría y bendición para nosotros!<br>
         Es por eso que nos gustaría invitarte a celebrar nuestra unión.</p></div>
         <div class="details">
             <div class="countdown">
@@ -453,7 +451,7 @@
     </head>
     <body>
         <p>
-            <br>Ceremonia: 21:00 hs, El Refugio Hotel & Suites,<br> 
+            <br><br>Ceremonia: 20:30 hs, El Refugio Hotel & Suites,<br> 
             <span onclick="mostrarVentana('modalLink')">
                 J.R Binaghi 2180, Villa Angela, Chaco
             </span>.
@@ -578,29 +576,41 @@
         </script>
 
 <script>
-    function mostrarVentana(modalId) {
-        document.getElementById(modalId).style.transform = 'translate(-50%, -50%) scale(1)';
-        document.getElementById(modalId).style.display = 'block';
-        document.getElementById('overlay').style.display = 'block';
+   function mostrarVentana(modalId) {
+        const modal = document.getElementById(modalId);
+        const overlay = document.getElementById('overlay');
+
+        modal.style.display = 'block'; // Muestra el modal
+        overlay.style.display = 'block'; // Muestra el overlay
+
+        setTimeout(() => {
+            modal.style.transform = 'translate(-50%, -50%) scale(1)'; // Inicia la animación de apertura
+        }, 10); // Espera un pequeño tiempo para que el display se actualice
     }
 
     function cerrarVentana(modalId) {
-        document.getElementById(modalId).style.transform = 'translate(-50%, -50%) scale(0)';
+        const modal = document.getElementById(modalId);
+        const overlay = document.getElementById('overlay');
+
+        modal.style.transform = 'translate(-50%, -50%) scale(0)'; // Inicia la animación de cierre
         setTimeout(() => {
-            document.getElementById(modalId).style.display = 'none';
-        }, 300); // Espera el tiempo de la transición antes de ocultar el modal
-        document.getElementById('overlay').style.display = 'none';
+            modal.style.display = 'none'; // Esconde el modal después de la animación
+            overlay.style.display = 'none'; // Esconde el overlay
+        }, 300); // Tiempo igual al de la transición
     }
 
     function cerrarTodo() {
         const modals = document.querySelectorAll('.modal');
+        const overlay = document.getElementById('overlay');
+
         modals.forEach(modal => {
-            modal.style.transform = 'translate(-50%, -50%) scale(0)';
+            modal.style.transform = 'translate(-50%, -50%) scale(0)'; // Inicia el cierre de todos los modales
             setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300); // Espera el tiempo de la transición
+                modal.style.display = 'none'; // Esconde los modales después de la animación
+            }, 300);
         });
-        document.getElementById('overlay').style.display = 'none';
+
+        overlay.style.display = 'none'; // Esconde el overlay
     }
 </script>
     </body>
