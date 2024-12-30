@@ -8,9 +8,6 @@
     <title>Boda de Sebastian & Karen</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        :root {
-    color-scheme: light; /* Fuerza el modo claro */
-}
         /* General styles */
         body {
             margin: 0;
@@ -20,12 +17,27 @@
             align-items: center;
             height: 100vh;
             font-family: 'Georgia', serif;
-            background-color: #f8f3ee; /* Fondo claro cálido */
             color: #a67347; /* Color de texto acorde a la paleta */
             text-align: center;
+            background: url('fotokaren.jpg') center center/cover no-repeat; /* Imagen de fondo */
+            position: relative;
+        }
+
+        /* Fondo blanco translúcido */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Fondo blanco translúcido */
+            z-index: 0;
         }
 
         .container {
+            position: relative;
+            z-index: 1; /* Asegura que el contenido esté encima del fondo */
             padding: 20px;
             width: 90%; /* Ocupa el 90% del ancho de la pantalla */
             max-width: 600px; /* Limita el tamaño máximo del contenedor */
@@ -35,13 +47,13 @@
 
         h1 {
             font-size: 2.5rem; /* Tamaño inicial de fuente */
-            color: #a67347;
+            color: #ffffff;
             margin: 0;
         }
 
         p {
             font-size: 1.2rem;
-            color: #5c4636;
+            color: #ffffff;
         }
 
         .button {
@@ -103,9 +115,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>¡Nos casamos!</h1>
+        <h1><br><br><br><br><br><br><br>¡Nos casamos!</h1>
         <p>Karen & Sebas</p>
-        <p>01.03.2025</p>
+        <p>01.03.2025</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="button">
             <a href="detalles.html">Ver tarjeta</a>
         </div>
