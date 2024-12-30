@@ -19,7 +19,7 @@
             font-family: 'Georgia', serif;
             color: #a67347; /* Color de texto acorde a la paleta */
             text-align: center;
-            background: url('fotokaren.JPG') center center/cover no-repeat; /* Imagen de fondo */
+            background: url('fotokaren.jpg') center center/cover no-repeat; /* Imagen de fondo */
             position: relative;
         }
 
@@ -58,6 +58,7 @@
 
         .button {
             margin-top: 20px;
+            position: relative;
         }
 
         a {
@@ -68,6 +69,7 @@
             border-radius: 5px;
             font-size: 1rem; /* Fuente adaptativa */
             transition: background-color 0.3s ease-in-out;
+            position: relative;
         }
 
         a:hover {
@@ -115,12 +117,25 @@
 </head>
 <body>
     <div class="container">
-        <h1><br><br><br><br><br><br><br>¡Nos casamos!</h1>
+        <h1><br><br><br><br><br><br><br><br><br><br>¡Nos casamos!</h1>
         <p>Karen & Sebas</p>
-        <p>01.03.2025</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>01.03.2025</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="button">
-            <a href="detalles.html">Ver tarjeta</a>
+            <a id="movingButton" href="detalles.html">Ver tarjeta</a>
         </div>
     </div>
+
+    <script>
+        const button = document.getElementById('movingButton');
+
+        button.addEventListener('mouseover', () => {
+            const x = Math.random() * window.innerWidth * 0.8;
+            const y = Math.random() * window.innerHeight * 0.8;
+
+            button.style.position = 'absolute';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        });
+    </script>
 </body>
 </html>
