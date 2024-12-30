@@ -58,7 +58,6 @@
 
         .button {
             margin-top: 20px;
-            position: relative;
         }
 
         a {
@@ -69,7 +68,7 @@
             border-radius: 5px;
             font-size: 1rem; /* Fuente adaptativa */
             transition: background-color 0.3s ease-in-out;
-            position: relative;
+            position: absolute; /* Necesario para mover el botón */
         }
 
         a:hover {
@@ -121,20 +120,28 @@
         <p>Karen & Sebas</p>
         <p>01.03.2025</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="button">
-            <a id="movingButton" href="detalles.html">Ver tarjeta</a>
+            <a id="random-btn" href="detalles.html">Ver tarjeta</a>
         </div>
     </div>
 
     <script>
-        const button = document.getElementById('movingButton');
+        const btnRandom = document.querySelector("#random-btn");
 
-        button.addEventListener('mouseover', () => {
-            const x = Math.random() * window.innerWidth * 0.8;
-            const y = Math.random() * window.innerHeight * 0.8;
+        function moverAleatoriamente(btn) {
+            btn.style.fontWeight = "bolder";
+            btn.style.position = "absolute";
 
-            button.style.position = 'absolute';
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
+            // Generar posición aleatoria dentro del rango del contenedor (área negra)
+            const top = Math.floor(Math.random() * 90) + 5; // Evita que salga fuera del contenedor
+            const left = Math.floor(Math.random() * 90) + 5;
+
+            // Actualizar estilos
+            btn.style.top = top + "%";
+            btn.style.left = left + "%";
+        }
+
+        btnRandom.addEventListener("mouseenter", function (e) {
+            moverAleatoriamente(e.target);
         });
     </script>
 </body>
